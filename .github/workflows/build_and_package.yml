@@ -1,0 +1,21 @@
+name: Build and Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm test
+#       - run: |
+#           docker login --username=bsweaver --password=${{ secrets.DockerToken }}
+#           docker image build -t bsweaver/ga-node-api:v1.0.0 .
+#           docker push bsweaver/ga-node-api:v1.0.0
