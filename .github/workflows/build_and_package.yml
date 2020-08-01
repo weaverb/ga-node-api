@@ -15,7 +15,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm test
-#       - run: |
-#           docker login --username=bsweaver --password=${{ secrets.DockerToken }}
-#           docker image build -t bsweaver/ga-node-api:v1.0.0 .
-#           docker push bsweaver/ga-node-api:v1.0.0
+      - run: |
+          docker login --username=bsweaver --password=${{ secrets.DockerToken }}
+          docker image build -t bsweaver/ga-node-api:v1.0.0 .
+          docker push bsweaver/ga-node-api:v1.0.0
