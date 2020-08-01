@@ -2,19 +2,29 @@
   "name": "ga-node-api",
   "version": "1.0.0",
   "description": "Playing around with github actions.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "jest"
   },
   "engines": {
     "node": "12.x",
     "npm": "6.x"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "keywords": [],
   "author": "bryanweaver@outlook.com",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.2.2",
+    "supertest": "^4.0.2"
   }
 }
